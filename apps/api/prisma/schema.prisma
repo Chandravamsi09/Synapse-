@@ -1,0 +1,322 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum UserRole {
+  SUPER_ADMIN
+  ORG_ADMIN
+  DEVELOPER
+  ANALYST
+  AUDITOR
+  VIEWER
+}
+
+enum ApiVisibility {
+  PUBLIC
+  PRIVATE
+  INTERNAL
+  RESTRICTED
+}
+
+enum ProtocolType {
+  REST
+  GRAPHQL
+  GRPC
+  WEBSOCKET
+  WEBHOOK
+}
+
+enum IntegrationCategory {
+  COMMUNICATION
+  PAYMENTS
+  DEVTOOLS
+  CRM
+  DATABASE
+  AI_ML
+  STORAGE
+  MARKETING
+  SECURITY
+}
+
+enum WebhookStatus {
+  PENDING
+  PROCESSING
+  DELIVERED
+  FAILED
+  RETRYING
+  DEAD_LETTER
+}
+
+enum RateLimitAlgorithm {
+  TOKEN_BUCKET
+  SLIDING_WINDOW
+  FIXED_WINDOW
+  LEAKY_BUCKET
+}
+
+enum SubscriptionTier {
+  COMMUNITY_FREE
+  DEVELOPER_PRO
+  BUSINESS_GROWTH
+  ENTERPRISE_CUSTOM
+}
+
+model Organization {
+  id              String           @id @default(uuid())
+  name            String
+  slug            String           @unique
+  description     String?
+  logoUrl         String?
+  tier            SubscriptionTier @default(COMMUNITY_FREE)
+  monthlyQuota    BigInt           @default(1000000)
+  currentUsage    BigInt           @default(0)
+  settings        Json?
+  isActive        Boolean          @default(true)
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+
+  users           User[]
+  apiKeys         ApiKey[]
+  apis            ApiRegistry[]
+  integrations    AppIntegration[]
+  webhooks        WebhookSubscription[]
+  auditLogs       AuditLogEntry[]
+  subscriptions   Subscription[]
+
+  @@map("organizations")
+}
+
+model User {
+  id              String         @id @default(uuid())
+  organizationId  String
+  email           String         @unique
+  passwordHash    String
+  firstName       String
+  lastName        String
+  avatarUrl       String?
+  role            UserRole       @default(DEVELOPER)
+  isMfaEnabled    Boolean        @default(false)
+  mfaSecret       String?
+  lastLoginAt     DateTime?
+  isActive        Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  organization    Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  apiKeysCreated  ApiKey[]
+  auditLogs       AuditLogEntry[]
+
+  @@index([organizationId])
+  @@map("users")
+}
+
+model ApiKey {
+  id              String         @id @default(uuid())
+  organizationId  String
+  createdById     String
+  name            String
+  keyPrefix       String
+  hashedSecret    String
+  scopes          String[]
+  allowedIps      String[]
+  rateLimitTier   String         @default("standard")
+  requestsPerSec  Int            @default(50)
+  burstLimit      Int            @default(100)
+  expiresAt       DateTime?
+  lastUsedAt      DateTime?
+  isActive        Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+
+  organization    Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  createdBy       User           @relation(fields: [createdById], references: [id])
+
+  @@index([keyPrefix])
+  @@index([organizationId])
+  @@map("api_keys")
+}
+
+model ApiRegistry {
+  id              String         @id @default(uuid())
+  organizationId  String
+  name            String
+  slug            String
+  description     String?
+  protocol        ProtocolType   @default(REST)
+  visibility      ApiVisibility  @default(PRIVATE)
+  version         String         @default("1.0.0")
+  targetBaseUrl   String
+  openApiSpecUrl  String?
+  rawSpec         Json?
+  isActive        Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  organization    Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  endpoints       ApiEndpoint[]
+  policies        SecurityPolicy[]
+  metrics         MetricTimeseries[]
+
+  @@unique([organizationId, slug, version])
+  @@map("api_registry")
+}
+
+model ApiEndpoint {
+  id              String         @id @default(uuid())
+  apiId           String
+  pathPattern     String
+  httpMethod      String
+  summary         String?
+  description     String?
+  isAuthRequired  Boolean        @default(true)
+  rateLimitPerMin Int            @default(120)
+  cacheTtlSeconds Int            @default(0)
+  mockResponse    Json?
+  isMockEnabled   Boolean        @default(false)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  api             ApiRegistry    @relation(fields: [apiId], references: [id], onDelete: Cascade)
+
+  @@unique([apiId, pathPattern, httpMethod])
+  @@map("api_endpoints")
+}
+
+model SecurityPolicy {
+  id              String         @id @default(uuid())
+  apiId           String
+  policyName      String
+  rateLimitAlgo   RateLimitAlgorithm @default(TOKEN_BUCKET)
+  capacity        Int            @default(100)
+  refillRate      Int            @default(10)
+  ipBlacklist     String[]
+  ipWhitelist     String[]
+  allowedOrigins  String[]
+  requireHttps    Boolean        @default(true)
+  jwtValidation   Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+
+  api             ApiRegistry    @relation(fields: [apiId], references: [id], onDelete: Cascade)
+
+  @@map("security_policies")
+}
+
+model AppIntegration {
+  id              String              @id @default(uuid())
+  organizationId  String
+  appIdentifier   String
+  name            String
+  category        IntegrationCategory
+  authType        String
+  credentialsEnc  String
+  configJson      Json?
+  webhookSecret   String?
+  healthStatus    String              @default("HEALTHY")
+  lastSyncedAt    DateTime?
+  isActive        Boolean             @default(true)
+  createdAt       DateTime            @default(now())
+  updatedAt       DateTime            @updatedAt
+
+  organization    Organization        @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@index([organizationId, appIdentifier])
+  @@map("app_integrations")
+}
+
+model WebhookSubscription {
+  id              String         @id @default(uuid())
+  organizationId  String
+  name            String
+  targetUrl       String
+  secretKey       String
+  eventTypes      String[]
+  maxRetries      Int            @default(5)
+  backoffFactor   Float          @default(2.0)
+  isActive        Boolean        @default(true)
+  createdAt       DateTime       @default(now())
+
+  organization    Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  deliveries      WebhookDelivery[]
+
+  @@map("webhook_subscriptions")
+}
+
+model WebhookDelivery {
+  id              String              @id @default(uuid())
+  subscriptionId  String
+  eventType       String
+  payloadJson     Json
+  statusCode      Int?
+  responseBody    String?
+  latencyMs       Int?
+  status          WebhookStatus       @default(PENDING)
+  attemptCount    Int                 @default(0)
+  nextRetryAt     DateTime?
+  deliveredAt     DateTime?
+  createdAt       DateTime            @default(now())
+
+  subscription    WebhookSubscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+
+  @@index([subscriptionId, status])
+  @@map("webhook_deliveries")
+}
+
+model MetricTimeseries {
+  id              String         @id @default(uuid())
+  apiId           String
+  timestamp       DateTime       @default(now())
+  totalRequests   Int            @default(0)
+  successfulReqs  Int            @default(0)
+  clientErrors    Int            @default(0)
+  serverErrors    Int            @default(0)
+  avgLatencyMs    Float          @default(0.0)
+  p95LatencyMs    Float          @default(0.0)
+  p99LatencyMs    Float          @default(0.0)
+  bytesReceived   BigInt         @default(0)
+  bytesSent       BigInt         @default(0)
+
+  api             ApiRegistry    @relation(fields: [apiId], references: [id], onDelete: Cascade)
+
+  @@index([apiId, timestamp])
+  @@map("metric_timeseries")
+}
+
+model AuditLogEntry {
+  id              String         @id @default(uuid())
+  organizationId  String
+  userId          String?
+  action          String
+  resourceType    String
+  resourceId      String
+  ipAddress       String
+  userAgent       String?
+  changesJson     Json?
+  timestamp       DateTime       @default(now())
+
+  organization    Organization   @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+  user            User?          @relation(fields: [userId], references: [id])
+
+  @@index([organizationId, timestamp])
+  @@map("audit_log_entries")
+}
+
+model Subscription {
+  id              String           @id @default(uuid())
+  organizationId  String
+  tier            SubscriptionTier @default(COMMUNITY_FREE)
+  stripeCustId    String?
+  stripeSubId     String?
+  status          String           @default("ACTIVE")
+  periodStart     DateTime
+  periodEnd       DateTime
+  cancelAtEnd     Boolean          @default(false)
+  createdAt       DateTime         @default(now())
+
+  organization    Organization     @relation(fields: [organizationId], references: [id], onDelete: Cascade)
+
+  @@map("subscriptions")
+}
