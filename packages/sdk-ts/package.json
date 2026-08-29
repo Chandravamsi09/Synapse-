@@ -1,0 +1,14 @@
+{
+  "name": "@synapse-io/sdk",
+  "version": "1.0.0",
+  "description": "Official TypeScript/JavaScript Client SDK for Synapse API Gateway and App Platform",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
