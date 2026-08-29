@@ -1,0 +1,4702 @@
+[
+  {
+    "id": "slack",
+    "name": "Slack",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Slack. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.slack.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.slack.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/slack/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/slack/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/slack/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/slack/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/slack/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/slack/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/slack/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "slack.created",
+        "summary": "Triggered when an entity is created in Slack"
+      },
+      {
+        "event": "slack.updated",
+        "summary": "Triggered when an entity is updated in Slack"
+      },
+      {
+        "event": "slack.deleted",
+        "summary": "Triggered when an entity is deleted in Slack"
+      },
+      {
+        "event": "slack.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "github",
+    "name": "Github",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Github. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.github.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.github.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/github/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/github/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/github/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/github/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/github/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/github/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/github/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "github.created",
+        "summary": "Triggered when an entity is created in Github"
+      },
+      {
+        "event": "github.updated",
+        "summary": "Triggered when an entity is updated in Github"
+      },
+      {
+        "event": "github.deleted",
+        "summary": "Triggered when an entity is deleted in Github"
+      },
+      {
+        "event": "github.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "stripe",
+    "name": "Stripe",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Stripe. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.stripe.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.stripe.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/stripe/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/stripe/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/stripe/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/stripe/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/stripe/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/stripe/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/stripe/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "stripe.created",
+        "summary": "Triggered when an entity is created in Stripe"
+      },
+      {
+        "event": "stripe.updated",
+        "summary": "Triggered when an entity is updated in Stripe"
+      },
+      {
+        "event": "stripe.deleted",
+        "summary": "Triggered when an entity is deleted in Stripe"
+      },
+      {
+        "event": "stripe.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "discord",
+    "name": "Discord",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Discord. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.discord.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.discord.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/discord/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/discord/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/discord/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/discord/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/discord/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/discord/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/discord/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "discord.created",
+        "summary": "Triggered when an entity is created in Discord"
+      },
+      {
+        "event": "discord.updated",
+        "summary": "Triggered when an entity is updated in Discord"
+      },
+      {
+        "event": "discord.deleted",
+        "summary": "Triggered when an entity is deleted in Discord"
+      },
+      {
+        "event": "discord.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "jira",
+    "name": "Jira",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Jira. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.jira.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.jira.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/jira/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/jira/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/jira/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/jira/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/jira/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/jira/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/jira/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "jira.created",
+        "summary": "Triggered when an entity is created in Jira"
+      },
+      {
+        "event": "jira.updated",
+        "summary": "Triggered when an entity is updated in Jira"
+      },
+      {
+        "event": "jira.deleted",
+        "summary": "Triggered when an entity is deleted in Jira"
+      },
+      {
+        "event": "jira.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "twilio",
+    "name": "Twilio",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Twilio. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.twilio.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.twilio.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/twilio/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/twilio/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/twilio/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/twilio/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/twilio/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/twilio/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/twilio/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "twilio.created",
+        "summary": "Triggered when an entity is created in Twilio"
+      },
+      {
+        "event": "twilio.updated",
+        "summary": "Triggered when an entity is updated in Twilio"
+      },
+      {
+        "event": "twilio.deleted",
+        "summary": "Triggered when an entity is deleted in Twilio"
+      },
+      {
+        "event": "twilio.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "salesforce",
+    "name": "Salesforce",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Salesforce. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.salesforce.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.salesforce.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/salesforce/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/salesforce/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/salesforce/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/salesforce/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/salesforce/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/salesforce/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/salesforce/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "salesforce.created",
+        "summary": "Triggered when an entity is created in Salesforce"
+      },
+      {
+        "event": "salesforce.updated",
+        "summary": "Triggered when an entity is updated in Salesforce"
+      },
+      {
+        "event": "salesforce.deleted",
+        "summary": "Triggered when an entity is deleted in Salesforce"
+      },
+      {
+        "event": "salesforce.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "openai",
+    "name": "Openai",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Openai. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.openai.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.openai.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/openai/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/openai/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/openai/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/openai/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/openai/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/openai/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/openai/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "openai.created",
+        "summary": "Triggered when an entity is created in Openai"
+      },
+      {
+        "event": "openai.updated",
+        "summary": "Triggered when an entity is updated in Openai"
+      },
+      {
+        "event": "openai.deleted",
+        "summary": "Triggered when an entity is deleted in Openai"
+      },
+      {
+        "event": "openai.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "aws-s3",
+    "name": "Aws S3",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Aws S3. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.aws-s3.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.aws-s3.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/aws-s3/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/aws-s3/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/aws-s3/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/aws-s3/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/aws-s3/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/aws-s3/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/aws-s3/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "aws-s3.created",
+        "summary": "Triggered when an entity is created in Aws S3"
+      },
+      {
+        "event": "aws-s3.updated",
+        "summary": "Triggered when an entity is updated in Aws S3"
+      },
+      {
+        "event": "aws-s3.deleted",
+        "summary": "Triggered when an entity is deleted in Aws S3"
+      },
+      {
+        "event": "aws-s3.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "aws-sqs",
+    "name": "Aws Sqs",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Aws Sqs. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.aws-sqs.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.aws-sqs.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/aws-sqs/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/aws-sqs/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/aws-sqs/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/aws-sqs/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/aws-sqs/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/aws-sqs/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/aws-sqs/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "aws-sqs.created",
+        "summary": "Triggered when an entity is created in Aws Sqs"
+      },
+      {
+        "event": "aws-sqs.updated",
+        "summary": "Triggered when an entity is updated in Aws Sqs"
+      },
+      {
+        "event": "aws-sqs.deleted",
+        "summary": "Triggered when an entity is deleted in Aws Sqs"
+      },
+      {
+        "event": "aws-sqs.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "hubspot",
+    "name": "Hubspot",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Hubspot. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.hubspot.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.hubspot.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/hubspot/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/hubspot/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/hubspot/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/hubspot/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/hubspot/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/hubspot/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/hubspot/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "hubspot.created",
+        "summary": "Triggered when an entity is created in Hubspot"
+      },
+      {
+        "event": "hubspot.updated",
+        "summary": "Triggered when an entity is updated in Hubspot"
+      },
+      {
+        "event": "hubspot.deleted",
+        "summary": "Triggered when an entity is deleted in Hubspot"
+      },
+      {
+        "event": "hubspot.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "zendesk",
+    "name": "Zendesk",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Zendesk. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.zendesk.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.zendesk.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/zendesk/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/zendesk/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/zendesk/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/zendesk/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/zendesk/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/zendesk/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/zendesk/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "zendesk.created",
+        "summary": "Triggered when an entity is created in Zendesk"
+      },
+      {
+        "event": "zendesk.updated",
+        "summary": "Triggered when an entity is updated in Zendesk"
+      },
+      {
+        "event": "zendesk.deleted",
+        "summary": "Triggered when an entity is deleted in Zendesk"
+      },
+      {
+        "event": "zendesk.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "mailchimp",
+    "name": "Mailchimp",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Mailchimp. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.mailchimp.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.mailchimp.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/mailchimp/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/mailchimp/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/mailchimp/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/mailchimp/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/mailchimp/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/mailchimp/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/mailchimp/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "mailchimp.created",
+        "summary": "Triggered when an entity is created in Mailchimp"
+      },
+      {
+        "event": "mailchimp.updated",
+        "summary": "Triggered when an entity is updated in Mailchimp"
+      },
+      {
+        "event": "mailchimp.deleted",
+        "summary": "Triggered when an entity is deleted in Mailchimp"
+      },
+      {
+        "event": "mailchimp.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "pagerduty",
+    "name": "Pagerduty",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Pagerduty. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.pagerduty.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.pagerduty.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/pagerduty/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/pagerduty/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/pagerduty/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/pagerduty/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/pagerduty/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/pagerduty/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/pagerduty/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "pagerduty.created",
+        "summary": "Triggered when an entity is created in Pagerduty"
+      },
+      {
+        "event": "pagerduty.updated",
+        "summary": "Triggered when an entity is updated in Pagerduty"
+      },
+      {
+        "event": "pagerduty.deleted",
+        "summary": "Triggered when an entity is deleted in Pagerduty"
+      },
+      {
+        "event": "pagerduty.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "datadog",
+    "name": "Datadog",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Datadog. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.datadog.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.datadog.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/datadog/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/datadog/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/datadog/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/datadog/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/datadog/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/datadog/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/datadog/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "datadog.created",
+        "summary": "Triggered when an entity is created in Datadog"
+      },
+      {
+        "event": "datadog.updated",
+        "summary": "Triggered when an entity is updated in Datadog"
+      },
+      {
+        "event": "datadog.deleted",
+        "summary": "Triggered when an entity is deleted in Datadog"
+      },
+      {
+        "event": "datadog.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "sentry",
+    "name": "Sentry",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Sentry. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.sentry.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.sentry.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/sentry/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/sentry/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/sentry/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/sentry/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/sentry/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/sentry/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/sentry/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "sentry.created",
+        "summary": "Triggered when an entity is created in Sentry"
+      },
+      {
+        "event": "sentry.updated",
+        "summary": "Triggered when an entity is updated in Sentry"
+      },
+      {
+        "event": "sentry.deleted",
+        "summary": "Triggered when an entity is deleted in Sentry"
+      },
+      {
+        "event": "sentry.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "auth0",
+    "name": "Auth0",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Auth0. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.auth0.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.auth0.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/auth0/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/auth0/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/auth0/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/auth0/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/auth0/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/auth0/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/auth0/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "auth0.created",
+        "summary": "Triggered when an entity is created in Auth0"
+      },
+      {
+        "event": "auth0.updated",
+        "summary": "Triggered when an entity is updated in Auth0"
+      },
+      {
+        "event": "auth0.deleted",
+        "summary": "Triggered when an entity is deleted in Auth0"
+      },
+      {
+        "event": "auth0.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "okta",
+    "name": "Okta",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Okta. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.okta.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.okta.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/okta/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/okta/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/okta/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/okta/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/okta/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/okta/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/okta/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "okta.created",
+        "summary": "Triggered when an entity is created in Okta"
+      },
+      {
+        "event": "okta.updated",
+        "summary": "Triggered when an entity is updated in Okta"
+      },
+      {
+        "event": "okta.deleted",
+        "summary": "Triggered when an entity is deleted in Okta"
+      },
+      {
+        "event": "okta.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "firebase",
+    "name": "Firebase",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Firebase. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.firebase.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.firebase.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/firebase/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/firebase/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/firebase/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/firebase/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/firebase/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/firebase/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/firebase/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "firebase.created",
+        "summary": "Triggered when an entity is created in Firebase"
+      },
+      {
+        "event": "firebase.updated",
+        "summary": "Triggered when an entity is updated in Firebase"
+      },
+      {
+        "event": "firebase.deleted",
+        "summary": "Triggered when an entity is deleted in Firebase"
+      },
+      {
+        "event": "firebase.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "supabase",
+    "name": "Supabase",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Supabase. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.supabase.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.supabase.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/supabase/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/supabase/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/supabase/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/supabase/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/supabase/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/supabase/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/supabase/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "supabase.created",
+        "summary": "Triggered when an entity is created in Supabase"
+      },
+      {
+        "event": "supabase.updated",
+        "summary": "Triggered when an entity is updated in Supabase"
+      },
+      {
+        "event": "supabase.deleted",
+        "summary": "Triggered when an entity is deleted in Supabase"
+      },
+      {
+        "event": "supabase.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "shopify",
+    "name": "Shopify",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Shopify. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.shopify.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.shopify.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/shopify/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/shopify/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/shopify/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/shopify/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/shopify/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/shopify/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/shopify/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "shopify.created",
+        "summary": "Triggered when an entity is created in Shopify"
+      },
+      {
+        "event": "shopify.updated",
+        "summary": "Triggered when an entity is updated in Shopify"
+      },
+      {
+        "event": "shopify.deleted",
+        "summary": "Triggered when an entity is deleted in Shopify"
+      },
+      {
+        "event": "shopify.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "quickbooks",
+    "name": "Quickbooks",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Quickbooks. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.quickbooks.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.quickbooks.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/quickbooks/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/quickbooks/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/quickbooks/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/quickbooks/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/quickbooks/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/quickbooks/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/quickbooks/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "quickbooks.created",
+        "summary": "Triggered when an entity is created in Quickbooks"
+      },
+      {
+        "event": "quickbooks.updated",
+        "summary": "Triggered when an entity is updated in Quickbooks"
+      },
+      {
+        "event": "quickbooks.deleted",
+        "summary": "Triggered when an entity is deleted in Quickbooks"
+      },
+      {
+        "event": "quickbooks.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "notion",
+    "name": "Notion",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Notion. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.notion.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.notion.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/notion/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/notion/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/notion/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/notion/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/notion/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/notion/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/notion/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "notion.created",
+        "summary": "Triggered when an entity is created in Notion"
+      },
+      {
+        "event": "notion.updated",
+        "summary": "Triggered when an entity is updated in Notion"
+      },
+      {
+        "event": "notion.deleted",
+        "summary": "Triggered when an entity is deleted in Notion"
+      },
+      {
+        "event": "notion.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "airtable",
+    "name": "Airtable",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Airtable. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.airtable.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.airtable.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/airtable/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/airtable/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/airtable/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/airtable/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/airtable/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/airtable/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/airtable/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "airtable.created",
+        "summary": "Triggered when an entity is created in Airtable"
+      },
+      {
+        "event": "airtable.updated",
+        "summary": "Triggered when an entity is updated in Airtable"
+      },
+      {
+        "event": "airtable.deleted",
+        "summary": "Triggered when an entity is deleted in Airtable"
+      },
+      {
+        "event": "airtable.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "asana",
+    "name": "Asana",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Asana. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.asana.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.asana.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/asana/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/asana/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/asana/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/asana/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/asana/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/asana/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/asana/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "asana.created",
+        "summary": "Triggered when an entity is created in Asana"
+      },
+      {
+        "event": "asana.updated",
+        "summary": "Triggered when an entity is updated in Asana"
+      },
+      {
+        "event": "asana.deleted",
+        "summary": "Triggered when an entity is deleted in Asana"
+      },
+      {
+        "event": "asana.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "trello",
+    "name": "Trello",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Trello. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.trello.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.trello.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/trello/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/trello/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/trello/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/trello/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/trello/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/trello/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/trello/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "trello.created",
+        "summary": "Triggered when an entity is created in Trello"
+      },
+      {
+        "event": "trello.updated",
+        "summary": "Triggered when an entity is updated in Trello"
+      },
+      {
+        "event": "trello.deleted",
+        "summary": "Triggered when an entity is deleted in Trello"
+      },
+      {
+        "event": "trello.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "clickup",
+    "name": "Clickup",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Clickup. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.clickup.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.clickup.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/clickup/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/clickup/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/clickup/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/clickup/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/clickup/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/clickup/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/clickup/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "clickup.created",
+        "summary": "Triggered when an entity is created in Clickup"
+      },
+      {
+        "event": "clickup.updated",
+        "summary": "Triggered when an entity is updated in Clickup"
+      },
+      {
+        "event": "clickup.deleted",
+        "summary": "Triggered when an entity is deleted in Clickup"
+      },
+      {
+        "event": "clickup.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "linear",
+    "name": "Linear",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Linear. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.linear.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.linear.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/linear/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/linear/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/linear/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/linear/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/linear/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/linear/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/linear/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "linear.created",
+        "summary": "Triggered when an entity is created in Linear"
+      },
+      {
+        "event": "linear.updated",
+        "summary": "Triggered when an entity is updated in Linear"
+      },
+      {
+        "event": "linear.deleted",
+        "summary": "Triggered when an entity is deleted in Linear"
+      },
+      {
+        "event": "linear.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "gitlab",
+    "name": "Gitlab",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Gitlab. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.gitlab.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.gitlab.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/gitlab/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/gitlab/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/gitlab/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/gitlab/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/gitlab/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/gitlab/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/gitlab/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "gitlab.created",
+        "summary": "Triggered when an entity is created in Gitlab"
+      },
+      {
+        "event": "gitlab.updated",
+        "summary": "Triggered when an entity is updated in Gitlab"
+      },
+      {
+        "event": "gitlab.deleted",
+        "summary": "Triggered when an entity is deleted in Gitlab"
+      },
+      {
+        "event": "gitlab.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "bitbucket",
+    "name": "Bitbucket",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Bitbucket. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.bitbucket.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.bitbucket.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/bitbucket/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/bitbucket/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/bitbucket/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/bitbucket/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/bitbucket/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/bitbucket/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/bitbucket/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "bitbucket.created",
+        "summary": "Triggered when an entity is created in Bitbucket"
+      },
+      {
+        "event": "bitbucket.updated",
+        "summary": "Triggered when an entity is updated in Bitbucket"
+      },
+      {
+        "event": "bitbucket.deleted",
+        "summary": "Triggered when an entity is deleted in Bitbucket"
+      },
+      {
+        "event": "bitbucket.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "docker-hub",
+    "name": "Docker Hub",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Docker Hub. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.docker-hub.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.docker-hub.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/docker-hub/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/docker-hub/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/docker-hub/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/docker-hub/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/docker-hub/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/docker-hub/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/docker-hub/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "docker-hub.created",
+        "summary": "Triggered when an entity is created in Docker Hub"
+      },
+      {
+        "event": "docker-hub.updated",
+        "summary": "Triggered when an entity is updated in Docker Hub"
+      },
+      {
+        "event": "docker-hub.deleted",
+        "summary": "Triggered when an entity is deleted in Docker Hub"
+      },
+      {
+        "event": "docker-hub.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "kubernetes",
+    "name": "Kubernetes",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Kubernetes. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.kubernetes.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.kubernetes.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/kubernetes/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/kubernetes/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/kubernetes/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/kubernetes/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/kubernetes/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/kubernetes/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/kubernetes/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "kubernetes.created",
+        "summary": "Triggered when an entity is created in Kubernetes"
+      },
+      {
+        "event": "kubernetes.updated",
+        "summary": "Triggered when an entity is updated in Kubernetes"
+      },
+      {
+        "event": "kubernetes.deleted",
+        "summary": "Triggered when an entity is deleted in Kubernetes"
+      },
+      {
+        "event": "kubernetes.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "vault",
+    "name": "Vault",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Vault. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.vault.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.vault.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/vault/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/vault/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/vault/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/vault/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/vault/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/vault/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/vault/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "vault.created",
+        "summary": "Triggered when an entity is created in Vault"
+      },
+      {
+        "event": "vault.updated",
+        "summary": "Triggered when an entity is updated in Vault"
+      },
+      {
+        "event": "vault.deleted",
+        "summary": "Triggered when an entity is deleted in Vault"
+      },
+      {
+        "event": "vault.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "elastic",
+    "name": "Elastic",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Elastic. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.elastic.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.elastic.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/elastic/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/elastic/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/elastic/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/elastic/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/elastic/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/elastic/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/elastic/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "elastic.created",
+        "summary": "Triggered when an entity is created in Elastic"
+      },
+      {
+        "event": "elastic.updated",
+        "summary": "Triggered when an entity is updated in Elastic"
+      },
+      {
+        "event": "elastic.deleted",
+        "summary": "Triggered when an entity is deleted in Elastic"
+      },
+      {
+        "event": "elastic.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "redis-cloud",
+    "name": "Redis Cloud",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Redis Cloud. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.redis-cloud.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.redis-cloud.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/redis-cloud/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/redis-cloud/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/redis-cloud/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/redis-cloud/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/redis-cloud/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/redis-cloud/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/redis-cloud/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "redis-cloud.created",
+        "summary": "Triggered when an entity is created in Redis Cloud"
+      },
+      {
+        "event": "redis-cloud.updated",
+        "summary": "Triggered when an entity is updated in Redis Cloud"
+      },
+      {
+        "event": "redis-cloud.deleted",
+        "summary": "Triggered when an entity is deleted in Redis Cloud"
+      },
+      {
+        "event": "redis-cloud.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "mongodb-atlas",
+    "name": "Mongodb Atlas",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Mongodb Atlas. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.mongodb-atlas.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.mongodb-atlas.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/mongodb-atlas/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/mongodb-atlas/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/mongodb-atlas/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/mongodb-atlas/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/mongodb-atlas/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/mongodb-atlas/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/mongodb-atlas/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "mongodb-atlas.created",
+        "summary": "Triggered when an entity is created in Mongodb Atlas"
+      },
+      {
+        "event": "mongodb-atlas.updated",
+        "summary": "Triggered when an entity is updated in Mongodb Atlas"
+      },
+      {
+        "event": "mongodb-atlas.deleted",
+        "summary": "Triggered when an entity is deleted in Mongodb Atlas"
+      },
+      {
+        "event": "mongodb-atlas.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "snowflake",
+    "name": "Snowflake",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Snowflake. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.snowflake.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.snowflake.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/snowflake/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/snowflake/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/snowflake/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/snowflake/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/snowflake/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/snowflake/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/snowflake/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "snowflake.created",
+        "summary": "Triggered when an entity is created in Snowflake"
+      },
+      {
+        "event": "snowflake.updated",
+        "summary": "Triggered when an entity is updated in Snowflake"
+      },
+      {
+        "event": "snowflake.deleted",
+        "summary": "Triggered when an entity is deleted in Snowflake"
+      },
+      {
+        "event": "snowflake.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "bigquery",
+    "name": "Bigquery",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Bigquery. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.bigquery.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.bigquery.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/bigquery/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/bigquery/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/bigquery/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/bigquery/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/bigquery/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/bigquery/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/bigquery/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "bigquery.created",
+        "summary": "Triggered when an entity is created in Bigquery"
+      },
+      {
+        "event": "bigquery.updated",
+        "summary": "Triggered when an entity is updated in Bigquery"
+      },
+      {
+        "event": "bigquery.deleted",
+        "summary": "Triggered when an entity is deleted in Bigquery"
+      },
+      {
+        "event": "bigquery.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "segment",
+    "name": "Segment",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Segment. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.segment.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.segment.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/segment/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/segment/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/segment/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/segment/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/segment/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/segment/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/segment/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "segment.created",
+        "summary": "Triggered when an entity is created in Segment"
+      },
+      {
+        "event": "segment.updated",
+        "summary": "Triggered when an entity is updated in Segment"
+      },
+      {
+        "event": "segment.deleted",
+        "summary": "Triggered when an entity is deleted in Segment"
+      },
+      {
+        "event": "segment.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "mixpanel",
+    "name": "Mixpanel",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Mixpanel. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.mixpanel.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.mixpanel.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/mixpanel/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/mixpanel/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/mixpanel/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/mixpanel/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/mixpanel/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/mixpanel/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/mixpanel/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "mixpanel.created",
+        "summary": "Triggered when an entity is created in Mixpanel"
+      },
+      {
+        "event": "mixpanel.updated",
+        "summary": "Triggered when an entity is updated in Mixpanel"
+      },
+      {
+        "event": "mixpanel.deleted",
+        "summary": "Triggered when an entity is deleted in Mixpanel"
+      },
+      {
+        "event": "mixpanel.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "google-analytics",
+    "name": "Google Analytics",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Google Analytics. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.google-analytics.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.google-analytics.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/google-analytics/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/google-analytics/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/google-analytics/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/google-analytics/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/google-analytics/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/google-analytics/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/google-analytics/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "google-analytics.created",
+        "summary": "Triggered when an entity is created in Google Analytics"
+      },
+      {
+        "event": "google-analytics.updated",
+        "summary": "Triggered when an entity is updated in Google Analytics"
+      },
+      {
+        "event": "google-analytics.deleted",
+        "summary": "Triggered when an entity is deleted in Google Analytics"
+      },
+      {
+        "event": "google-analytics.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "intercom",
+    "name": "Intercom",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Intercom. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.intercom.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.intercom.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/intercom/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/intercom/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/intercom/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/intercom/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/intercom/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/intercom/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/intercom/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "intercom.created",
+        "summary": "Triggered when an entity is created in Intercom"
+      },
+      {
+        "event": "intercom.updated",
+        "summary": "Triggered when an entity is updated in Intercom"
+      },
+      {
+        "event": "intercom.deleted",
+        "summary": "Triggered when an entity is deleted in Intercom"
+      },
+      {
+        "event": "intercom.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "zoom",
+    "name": "Zoom",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Zoom. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.zoom.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.zoom.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/zoom/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/zoom/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/zoom/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/zoom/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/zoom/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/zoom/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/zoom/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "zoom.created",
+        "summary": "Triggered when an entity is created in Zoom"
+      },
+      {
+        "event": "zoom.updated",
+        "summary": "Triggered when an entity is updated in Zoom"
+      },
+      {
+        "event": "zoom.deleted",
+        "summary": "Triggered when an entity is deleted in Zoom"
+      },
+      {
+        "event": "zoom.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "microsoft-teams",
+    "name": "Microsoft Teams",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Microsoft Teams. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.microsoft-teams.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.microsoft-teams.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/microsoft-teams/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/microsoft-teams/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/microsoft-teams/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/microsoft-teams/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/microsoft-teams/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/microsoft-teams/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/microsoft-teams/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "microsoft-teams.created",
+        "summary": "Triggered when an entity is created in Microsoft Teams"
+      },
+      {
+        "event": "microsoft-teams.updated",
+        "summary": "Triggered when an entity is updated in Microsoft Teams"
+      },
+      {
+        "event": "microsoft-teams.deleted",
+        "summary": "Triggered when an entity is deleted in Microsoft Teams"
+      },
+      {
+        "event": "microsoft-teams.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "sendgrid",
+    "name": "Sendgrid",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Sendgrid. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.sendgrid.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.sendgrid.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/sendgrid/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/sendgrid/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/sendgrid/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/sendgrid/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/sendgrid/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/sendgrid/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/sendgrid/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "sendgrid.created",
+        "summary": "Triggered when an entity is created in Sendgrid"
+      },
+      {
+        "event": "sendgrid.updated",
+        "summary": "Triggered when an entity is updated in Sendgrid"
+      },
+      {
+        "event": "sendgrid.deleted",
+        "summary": "Triggered when an entity is deleted in Sendgrid"
+      },
+      {
+        "event": "sendgrid.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "postmark",
+    "name": "Postmark",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Postmark. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.postmark.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.postmark.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/postmark/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/postmark/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/postmark/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/postmark/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/postmark/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/postmark/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/postmark/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "postmark.created",
+        "summary": "Triggered when an entity is created in Postmark"
+      },
+      {
+        "event": "postmark.updated",
+        "summary": "Triggered when an entity is updated in Postmark"
+      },
+      {
+        "event": "postmark.deleted",
+        "summary": "Triggered when an entity is deleted in Postmark"
+      },
+      {
+        "event": "postmark.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "plaid",
+    "name": "Plaid",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Plaid. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.plaid.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.plaid.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/plaid/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/plaid/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/plaid/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/plaid/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/plaid/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/plaid/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/plaid/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "plaid.created",
+        "summary": "Triggered when an entity is created in Plaid"
+      },
+      {
+        "event": "plaid.updated",
+        "summary": "Triggered when an entity is updated in Plaid"
+      },
+      {
+        "event": "plaid.deleted",
+        "summary": "Triggered when an entity is deleted in Plaid"
+      },
+      {
+        "event": "plaid.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "square",
+    "name": "Square",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Square. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.square.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.square.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/square/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/square/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/square/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/square/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/square/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/square/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/square/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "square.created",
+        "summary": "Triggered when an entity is created in Square"
+      },
+      {
+        "event": "square.updated",
+        "summary": "Triggered when an entity is updated in Square"
+      },
+      {
+        "event": "square.deleted",
+        "summary": "Triggered when an entity is deleted in Square"
+      },
+      {
+        "event": "square.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "paypal",
+    "name": "Paypal",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Paypal. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.paypal.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.paypal.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/paypal/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/paypal/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/paypal/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/paypal/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/paypal/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/paypal/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/paypal/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "paypal.created",
+        "summary": "Triggered when an entity is created in Paypal"
+      },
+      {
+        "event": "paypal.updated",
+        "summary": "Triggered when an entity is updated in Paypal"
+      },
+      {
+        "event": "paypal.deleted",
+        "summary": "Triggered when an entity is deleted in Paypal"
+      },
+      {
+        "event": "paypal.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  },
+  {
+    "id": "chargebee",
+    "name": "Chargebee",
+    "version": "2.4.0",
+    "description": "Production-ready enterprise connector for Chargebee. Supports automated webhook sync, bidirectional OAuth2, event dispatching, and rate limit throttling.",
+    "category": "Enterprise Integration",
+    "authentication": {
+      "types": [
+        "OAUTH2",
+        "API_KEY",
+        "BEARER_TOKEN"
+      ],
+      "tokenUrl": "https://auth.chargebee.com/oauth/v2/token",
+      "authorizationUrl": "https://auth.chargebee.com/oauth/v2/authorize",
+      "scopes": [
+        "read",
+        "write",
+        "admin",
+        "webhooks"
+      ]
+    },
+    "endpoints": [
+      {
+        "name": "List Resources",
+        "path": "/chargebee/v1/resources",
+        "method": "GET",
+        "rateLimit": 120
+      },
+      {
+        "name": "Create Resource",
+        "path": "/chargebee/v1/resources",
+        "method": "POST",
+        "rateLimit": 60
+      },
+      {
+        "name": "Get Resource Details",
+        "path": "/chargebee/v1/resources/:id",
+        "method": "GET",
+        "rateLimit": 300
+      },
+      {
+        "name": "Update Resource",
+        "path": "/chargebee/v1/resources/:id",
+        "method": "PUT",
+        "rateLimit": 60
+      },
+      {
+        "name": "Delete Resource",
+        "path": "/chargebee/v1/resources/:id",
+        "method": "DELETE",
+        "rateLimit": 30
+      },
+      {
+        "name": "Subscribe Webhooks",
+        "path": "/chargebee/v1/webhooks",
+        "method": "POST",
+        "rateLimit": 20
+      },
+      {
+        "name": "Verify Connection Health",
+        "path": "/chargebee/v1/health",
+        "method": "GET",
+        "rateLimit": 600
+      }
+    ],
+    "eventTriggers": [
+      {
+        "event": "chargebee.created",
+        "summary": "Triggered when an entity is created in Chargebee"
+      },
+      {
+        "event": "chargebee.updated",
+        "summary": "Triggered when an entity is updated in Chargebee"
+      },
+      {
+        "event": "chargebee.deleted",
+        "summary": "Triggered when an entity is deleted in Chargebee"
+      },
+      {
+        "event": "chargebee.sync_failed",
+        "summary": "Triggered when real-time synchronization encounters errors"
+      }
+    ],
+    "rateLimits": {
+      "tierStandard": {
+        "requestsPerMinute": 120,
+        "burst": 30
+      },
+      "tierEnterprise": {
+        "requestsPerMinute": 2400,
+        "burst": 500
+      }
+    }
+  }
+]

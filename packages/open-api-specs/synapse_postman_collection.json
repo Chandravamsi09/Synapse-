@@ -1,0 +1,3060 @@
+{
+  "info": {
+    "name": "Synapse Enterprise API Platform Collection",
+    "_postman_id": "synapse-col-2026-enterprise",
+    "description": "Full API suite for Synapse Gateway, Management Core, App Connectors, and Webhooks",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "SLACK Connector API",
+      "item": [
+        {
+          "name": "Get slack Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/slack/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "slack",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute slack Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/slack/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "slack",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GITHUB Connector API",
+      "item": [
+        {
+          "name": "Get github Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/github/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "github",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute github Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/github/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "github",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "STRIPE Connector API",
+      "item": [
+        {
+          "name": "Get stripe Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/stripe/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "stripe",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute stripe Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/stripe/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "stripe",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "DISCORD Connector API",
+      "item": [
+        {
+          "name": "Get discord Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/discord/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "discord",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute discord Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/discord/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "discord",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "JIRA Connector API",
+      "item": [
+        {
+          "name": "Get jira Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/jira/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "jira",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute jira Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/jira/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "jira",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "TWILIO Connector API",
+      "item": [
+        {
+          "name": "Get twilio Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/twilio/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "twilio",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute twilio Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/twilio/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "twilio",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SALESFORCE Connector API",
+      "item": [
+        {
+          "name": "Get salesforce Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/salesforce/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "salesforce",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute salesforce Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/salesforce/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "salesforce",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "OPENAI Connector API",
+      "item": [
+        {
+          "name": "Get openai Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/openai/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "openai",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute openai Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/openai/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "openai",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AWS-S3 Connector API",
+      "item": [
+        {
+          "name": "Get aws-s3 Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/aws-s3/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "aws-s3",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute aws-s3 Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/aws-s3/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "aws-s3",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AWS-SQS Connector API",
+      "item": [
+        {
+          "name": "Get aws-sqs Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/aws-sqs/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "aws-sqs",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute aws-sqs Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/aws-sqs/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "aws-sqs",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "HUBSPOT Connector API",
+      "item": [
+        {
+          "name": "Get hubspot Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/hubspot/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "hubspot",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute hubspot Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/hubspot/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "hubspot",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ZENDESK Connector API",
+      "item": [
+        {
+          "name": "Get zendesk Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/zendesk/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "zendesk",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute zendesk Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/zendesk/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "zendesk",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "MAILCHIMP Connector API",
+      "item": [
+        {
+          "name": "Get mailchimp Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/mailchimp/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "mailchimp",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute mailchimp Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/mailchimp/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "mailchimp",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PAGERDUTY Connector API",
+      "item": [
+        {
+          "name": "Get pagerduty Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/pagerduty/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "pagerduty",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute pagerduty Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/pagerduty/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "pagerduty",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "DATADOG Connector API",
+      "item": [
+        {
+          "name": "Get datadog Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/datadog/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "datadog",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute datadog Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/datadog/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "datadog",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SENTRY Connector API",
+      "item": [
+        {
+          "name": "Get sentry Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/sentry/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "sentry",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute sentry Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/sentry/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "sentry",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AUTH0 Connector API",
+      "item": [
+        {
+          "name": "Get auth0 Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/auth0/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "auth0",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute auth0 Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/auth0/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "auth0",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "OKTA Connector API",
+      "item": [
+        {
+          "name": "Get okta Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/okta/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "okta",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute okta Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/okta/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "okta",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "FIREBASE Connector API",
+      "item": [
+        {
+          "name": "Get firebase Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/firebase/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "firebase",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute firebase Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/firebase/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "firebase",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SUPABASE Connector API",
+      "item": [
+        {
+          "name": "Get supabase Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/supabase/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "supabase",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute supabase Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/supabase/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "supabase",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SHOPIFY Connector API",
+      "item": [
+        {
+          "name": "Get shopify Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/shopify/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "shopify",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute shopify Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/shopify/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "shopify",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "QUICKBOOKS Connector API",
+      "item": [
+        {
+          "name": "Get quickbooks Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/quickbooks/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "quickbooks",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute quickbooks Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/quickbooks/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "quickbooks",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "NOTION Connector API",
+      "item": [
+        {
+          "name": "Get notion Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/notion/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "notion",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute notion Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/notion/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "notion",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "AIRTABLE Connector API",
+      "item": [
+        {
+          "name": "Get airtable Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/airtable/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "airtable",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute airtable Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/airtable/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "airtable",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ASANA Connector API",
+      "item": [
+        {
+          "name": "Get asana Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/asana/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "asana",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute asana Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/asana/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "asana",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "TRELLO Connector API",
+      "item": [
+        {
+          "name": "Get trello Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/trello/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "trello",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute trello Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/trello/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "trello",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CLICKUP Connector API",
+      "item": [
+        {
+          "name": "Get clickup Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/clickup/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "clickup",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute clickup Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/clickup/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "clickup",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "LINEAR Connector API",
+      "item": [
+        {
+          "name": "Get linear Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/linear/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "linear",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute linear Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/linear/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "linear",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GITLAB Connector API",
+      "item": [
+        {
+          "name": "Get gitlab Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/gitlab/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "gitlab",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute gitlab Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/gitlab/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "gitlab",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "BITBUCKET Connector API",
+      "item": [
+        {
+          "name": "Get bitbucket Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/bitbucket/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "bitbucket",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute bitbucket Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/bitbucket/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "bitbucket",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "DOCKER-HUB Connector API",
+      "item": [
+        {
+          "name": "Get docker-hub Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/docker-hub/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "docker-hub",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute docker-hub Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/docker-hub/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "docker-hub",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "KUBERNETES Connector API",
+      "item": [
+        {
+          "name": "Get kubernetes Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/kubernetes/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "kubernetes",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute kubernetes Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/kubernetes/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "kubernetes",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "VAULT Connector API",
+      "item": [
+        {
+          "name": "Get vault Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/vault/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "vault",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute vault Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/vault/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "vault",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ELASTIC Connector API",
+      "item": [
+        {
+          "name": "Get elastic Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/elastic/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "elastic",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute elastic Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/elastic/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "elastic",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "REDIS-CLOUD Connector API",
+      "item": [
+        {
+          "name": "Get redis-cloud Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/redis-cloud/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "redis-cloud",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute redis-cloud Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/redis-cloud/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "redis-cloud",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "MONGODB-ATLAS Connector API",
+      "item": [
+        {
+          "name": "Get mongodb-atlas Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/mongodb-atlas/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "mongodb-atlas",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute mongodb-atlas Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/mongodb-atlas/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "mongodb-atlas",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SNOWFLAKE Connector API",
+      "item": [
+        {
+          "name": "Get snowflake Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/snowflake/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "snowflake",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute snowflake Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/snowflake/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "snowflake",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "BIGQUERY Connector API",
+      "item": [
+        {
+          "name": "Get bigquery Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/bigquery/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "bigquery",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute bigquery Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/bigquery/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "bigquery",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SEGMENT Connector API",
+      "item": [
+        {
+          "name": "Get segment Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/segment/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "segment",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute segment Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/segment/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "segment",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "MIXPANEL Connector API",
+      "item": [
+        {
+          "name": "Get mixpanel Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/mixpanel/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "mixpanel",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute mixpanel Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/mixpanel/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "mixpanel",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "GOOGLE-ANALYTICS Connector API",
+      "item": [
+        {
+          "name": "Get google-analytics Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/google-analytics/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "google-analytics",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute google-analytics Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/google-analytics/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "google-analytics",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "INTERCOM Connector API",
+      "item": [
+        {
+          "name": "Get intercom Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/intercom/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "intercom",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute intercom Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/intercom/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "intercom",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "ZOOM Connector API",
+      "item": [
+        {
+          "name": "Get zoom Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/zoom/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "zoom",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute zoom Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/zoom/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "zoom",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "MICROSOFT-TEAMS Connector API",
+      "item": [
+        {
+          "name": "Get microsoft-teams Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/microsoft-teams/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "microsoft-teams",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute microsoft-teams Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/microsoft-teams/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "microsoft-teams",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SENDGRID Connector API",
+      "item": [
+        {
+          "name": "Get sendgrid Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/sendgrid/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "sendgrid",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute sendgrid Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/sendgrid/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "sendgrid",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "POSTMARK Connector API",
+      "item": [
+        {
+          "name": "Get postmark Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/postmark/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "postmark",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute postmark Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/postmark/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "postmark",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PLAID Connector API",
+      "item": [
+        {
+          "name": "Get plaid Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/plaid/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "plaid",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute plaid Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/plaid/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "plaid",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SQUARE Connector API",
+      "item": [
+        {
+          "name": "Get square Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/square/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "square",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute square Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/square/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "square",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "PAYPAL Connector API",
+      "item": [
+        {
+          "name": "Get paypal Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/paypal/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "paypal",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute paypal Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/paypal/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "paypal",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "CHARGEBEE Connector API",
+      "item": [
+        {
+          "name": "Get chargebee Health",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              }
+            ],
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/chargebee/health",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "chargebee",
+                "health"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Execute chargebee Action",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Authorization",
+                "value": "Bearer {{SYNAPSE_API_KEY}}"
+              },
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"action\": \"syncData\",\n  \"parameters\": {\n    \"limit\": 100\n  }\n}"
+            },
+            "url": {
+              "raw": "{{BASE_URL}}/v1/apps/chargebee/actions",
+              "host": [
+                "{{BASE_URL}}"
+              ],
+              "path": [
+                "v1",
+                "apps",
+                "chargebee",
+                "actions"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
