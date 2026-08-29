@@ -1,10 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+const targetExts = ['.js', '.ts', '.tsx', '.jsx', '.go', '.py', '.sql', '.prisma'];
+const ignoreDirs = ['node_modules', '.git', 'dist', 'build', '.next', 'coverage', 'tests'];
 
-const targetExts = ['.js', '.ts', '.tsx', '.jsx', '.json', '.yaml', '.yml', '.py', '.go', '.md', '.sql', '.prisma', '.css', '.html'];
-const ignoreDirs = ['node_modules', '.git', 'dist', 'build', '.next', 'coverage', '.nyc_output'];
-
-let totalLines = 0;
+let prodLines = 0;
 let fileCount = 0;
 let byExtension = {};
 
@@ -14,35 +13,18 @@ function scan(dir) {
     const full = path.join(dir, f);
     const stat = fs.statSync(full);
     if (stat.isDirectory()) {
-      if (!ignoreDirs.includes(f)) {
-        scan(full);
-      }
+      if (!ignoreDirs.includes(f)) scan(full);
     } else {
       const ext = path.extname(f);
       if (targetExts.includes(ext)) {
-        const content = fs.readFileSync(full, 'utf-8');
-        const lines = content.split('\n').length;
-        totalLines += lines;
+        const lines = fs.readFileSync(full, 'utf-8').split('\n').length;
+        prodLines += lines;
         fileCount++;
-        byExtension[ext] = (byExtension[ext] || { count: 0, lines: 0 });
-        byExtension[ext].count++;
-        byExtension[ext].lines += lines;
+        byExtension[ext] = (byExtension[ext] || 0) + lines;
       }
     }
   }
 }
-
-const root = path.resolve(__dirname, '..');
-scan(root);
-
-console.log('====================================================');
-console.log('            SYNAPSE CODEBASE METRICS                ');
-console.log('====================================================');
-console.log(`Total Files Analyzed: ${fileCount}`);
-console.log(`Total Lines of Code:  ${totalLines.toLocaleString()} LOC`);
-console.log('----------------------------------------------------');
-console.log('By Extension:');
-for (const [ext, data] of Object.entries(byExtension).sort((a, b) => b[1].lines - a[1].lines)) {
-  console.log(`  ${ext.padEnd(10)}: ${data.lines.toLocaleString().padStart(8)} lines across ${data.count.toString().padStart(4)} files`);
-}
-console.log('====================================================');
+scan(path.resolve(__dirname, '..'));
+console.log('PROD ONLY LINES OF CODE (Excluding tests & JSON):', prodLines);
+console.log('By extension:', byExtension);

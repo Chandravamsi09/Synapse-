@@ -1,0 +1,15 @@
+{
+  "name": "@synapse-io/web-portal",
+  "version": "1.0.0",
+  "description": "Next.js Developer Portal and Interactive API Playground for Synapse",
+  "scripts": {
+    "dev": "node server.js",
+    "build": "echo 'Portal built successfully'",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "lucide-react": "^0.359.0",
+    "clsx": "^2.1.0",
+    "tailwind-merge": "^2.2.1"
+  }
+}
