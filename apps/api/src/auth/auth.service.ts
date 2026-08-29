@@ -26,8 +26,8 @@ export class AuthService {
   private readonly tokenDurationSeconds: number = 3600; // 1 hour
   private readonly refreshDurationSeconds: number = 604800; // 7 days
 
-  constructor(jwtSecret: string = process.env.JWT_SECRET || 'synapse_default_secure_secret_2026') {
-    this.jwtSecret = jwtSecret;
+  constructor(jwtSecret?: string) {
+    this.jwtSecret = jwtSecret || process.env.JWT_SECRET || crypto.randomBytes(32).toString('hex');
   }
 
   /**

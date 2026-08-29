@@ -13,9 +13,9 @@ services:
       - NODE_ENV=production
       - PORT=4000
       - GATEWAY_PORT=4001
-      - DATABASE_URL=postgresql://synapse_user:synapse_pass@synapse-postgres:5432/synapse_db
-      - REDIS_URL=redis://synapse-redis:6379
-      - JWT_SECRET=synapse_super_secure_jwt_secret_key_2026_enterprise
+      - DATABASE_URL=${DATABASE_URL:-postgresql://synapse_user:${POSTGRES_PASSWORD:-}@synapse-postgres:5432/synapse_db}
+      - REDIS_URL=${REDIS_URL:-redis://synapse-redis:6379}
+      - JWT_SECRET=${JWT_SECRET:-}
     depends_on:
       - synapse-postgres
       - synapse-redis
@@ -45,9 +45,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_USER=synapse_user
-      - POSTGRES_PASSWORD=synapse_pass
-      - POSTGRES_DB=synapse_db
+      - POSTGRES_USER=${POSTGRES_USER:-synapse_user}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-}
+      - POSTGRES_DB=${POSTGRES_DB:-synapse_db}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     networks:

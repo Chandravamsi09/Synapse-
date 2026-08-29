@@ -21,8 +21,8 @@ export class AuditLoggerService {
   private logTrail: AuditRecord[] = [];
   private signingSecret: string;
 
-  constructor(secret: string = 'synapse_immutable_audit_signing_secret_2026') {
-    this.signingSecret = secret;
+  constructor(secret?: string) {
+    this.signingSecret = secret || process.env.AUDIT_SIGNING_SECRET || crypto.randomBytes(32).toString('hex');
   }
 
   log(data: Omit<AuditRecord, 'id' | 'timestamp' | 'signature'>): AuditRecord {
