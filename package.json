@@ -1,0 +1,35 @@
+{
+  "name": "synapse-platform",
+  "version": "1.0.0",
+  "description": "Enterprise App & API Management, Integration Gateway, and Developer Marketplace Platform",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "node scripts/build-all.js",
+    "start": "node apps/api/dist/main.js",
+    "start:api": "node apps/api/src/server.js",
+    "start:web": "node apps/web/server.js",
+    "test": "node tests/run-tests.js",
+    "lint": "node scripts/lint-check.js",
+    "loc": "node scripts/count-loc.js",
+    "format": "node scripts/format-code.js"
+  },
+  "keywords": [
+    "api-management",
+    "api-gateway",
+    "app-integrations",
+    "webhooks",
+    "developer-portal",
+    "rate-limiter",
+    "reverse-proxy",
+    "openapi"
+  ],
+  "author": "Synapse Core Team",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}

@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  synapse-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.api
+    container_name: synapse-api
+    ports:
+      - "4000:4000"
+      - "4001:4001"
+    environment:
+      - NODE_ENV=production
+      - PORT=4000
+      - GATEWAY_PORT=4001
+      - DATABASE_URL=postgresql://synapse_user:synapse_pass@synapse-postgres:5432/synapse_db
+      - REDIS_URL=redis://synapse-redis:6379
+      - JWT_SECRET=synapse_super_secure_jwt_secret_key_2026_enterprise
+    depends_on:
+      - synapse-postgres
+      - synapse-redis
+    networks:
+      - synapse-network
+    restart: unless-stopped
+
+  synapse-web:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.web
+    container_name: synapse-web
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://localhost:4000
+      - NEXT_PUBLIC_GATEWAY_URL=http://localhost:4001
+    depends_on:
+      - synapse-api
+    networks:
+      - synapse-network
+    restart: unless-stopped
+
+  synapse-postgres:
+    image: postgres:16-alpine
+    container_name: synapse-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=synapse_user
+      - POSTGRES_PASSWORD=synapse_pass
+      - POSTGRES_DB=synapse_db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - synapse-network
+    restart: unless-stopped
+
+  synapse-redis:
+    image: redis:7-alpine
+    container_name: synapse-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - synapse-network
+    restart: unless-stopped
+
+networks:
+  synapse-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
+  redis_data:
